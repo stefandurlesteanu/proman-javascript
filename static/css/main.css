@@ -1,3 +1,19 @@
 #boards {
+    background-color:green;
+}
+
+#botton {
+    background-color: blue;
+}
+.green {
     background-color: green;
+}
+
+.redBoard {
+    background-color: red;
+}
+
+p{
+    border:1px solid green;
+    margin-bottom:5px;
 }

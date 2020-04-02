@@ -12,10 +12,13 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
 
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-        <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+{#        <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>#}
+        <script src="{{ url_for('static', filename='js/data_manager.js') }}?1212" defer></script>
     </head>
     <body>
         <h1>ProMan</h1>
-        <div id="boards">Boards are loading...</div>
+        <button id="botton"  onclick="changeColor()"> Change color </button>
+        <div id="boards"> Boards are loading...</div>
+        <div id="cards">Cards are loading...  </div>
     </body>
 </html>

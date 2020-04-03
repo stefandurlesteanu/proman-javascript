@@ -11,24 +11,26 @@
         integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
     <!-- personalized css file -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
     <!-- Favicon links -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='favicon/favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+   <!-- JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 
     <title> {{ title if title else "PRO MAN" }}</title>
-
 
 </head>
 
     <header>
-        <nav class="nav-wrapper transparent">
+        <nav class="nav-wrapper light-green lighten-1">
             <div class="container">
-                <a href="#" class="brand-logo">
-                    <img src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+                <a href="/" class="brand-logo">
+                    <img src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" >
+                    <span style="margin-left: -10px;">roMan</span>
                 </a>
                 <a href="#" class="sidenav-trigger" data-target="mobile-menu">
                     <i class="material-icons">
@@ -36,13 +38,17 @@
                     </i>
                 </a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#" >Photo`s</a></li>
-                    <li><a href="#" >Services</a></li>
-                    <li><a href="#" >Contact</a></li>
+                    <li><a href="/" class="brown-text text-darken-3">
+
+                        Home
+                        </a>
+                    </li>
+                    <li><a href="/boards" class="brown-text text-darken-3">Boards</a></li>
+                    <li><a href="#" class="brown-text text-darken-3">Contact</a></li>
                 </ul>
                 <ul class="sidenav grey lighten-2" id="mobile-menu">
-                    <li><a href="#" >Photo`s</a></li>
-                    <li><a href="#" >Services</a></li>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/boards" >Boards</a></li>
                     <li><a href="#" >Contact</a></li>
                 </ul>
             </div>
@@ -52,54 +58,13 @@
 <body>
 
 
-{#    <nav class="nav-wraper indigo">#}
-{#        <div class="container">#}
-{#            <a href="#" class="brand-logo">Site Title</a>#}
-{#            <a href="#" class="sidenav-trigger" data-target="mobile-links">#}
-{#                <i class="material-icons">menu</i>#}
-{#            </a>#}
-{#            <ul class="right hide-on-med-and-down">#}
-{#                <li><a href="#">Home</a></li>#}
-{#                <li><a href="#">About</a></li>#}
-{#                <li><a href="#">Contact</a> </li>#}
-{#                <li><a href="#">Login</a> </li>#}
-{#            </ul>#}
-{#        </div>#}
-{#    </nav>#}
-{##}
-{#    <ul class="sidenav" id="mobile-links">#}
-{#        <li><a href="#">Home</a></li>#}
-{#        <li><a href="#">About</a></li>#}
-{#        <li><a href="#">Contact</a> </li>#}
-{#        <li><a href="#">Login</a> </li>#}
-{#    </ul>#}
+{% block boards %}
 
+{% endblock %}
 
-    {% block content %}
+{% block front_page %}
 
-    {% endblock %}
-
-
-
-
-
-
-{#    <div class="container">#}
-{#        <div class="row">#}
-{#            <div class="col s12 m8 l3 center-align">#}
-{#                <p>ProMan</p>#}
-{#            </div>#}
-{#            <div class="col s12 m4 l3"></div>#}
-{#            <div class="col s12 m4 l3"></div>#}
-{#            <div class="col s12 m8 l3">#}
-{#                <a href="#" class="btn pink waves-effect center-align">#}
-{#                    <span>New Board</span>#}
-{#                    <i class="material-icons grey-text text-darken-3 left">add_circle</i>#}
-{#                </a>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-
+{% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Materialize JavaScript -->
@@ -107,6 +72,7 @@
     <script defer>
         $(document).ready(function(){
             $('.sidenav').sidenav();
+            $('.parallax').parallax();
         });
     </script>
 </body>

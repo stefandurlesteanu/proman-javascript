@@ -5,13 +5,17 @@ import data_handler
 
 app = Flask(__name__)
 
+@app.route("/boards")
+def boards():
+    return render_template('boards.html')
+
 
 @app.route("/")
 def index():
     """
     This is a one-pager which shows all the boards and cards
     """
-    return render_template('layout.html')
+    return render_template('front_page.html')
 
 
 @app.route("/get-boards")
